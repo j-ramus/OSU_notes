@@ -8,7 +8,7 @@ Biasing $\Longrightarrow$ applying voltage
 
 - No voltage = no bias $\Longrightarrow$ no current flow
 - positive voltage = forward bias $\Longrightarrow$ large current flow because depletion zone shrinks
-- negitive voltage = reverse bias $\Longrightarrow$ small reverse saturation current
+- negative voltage = reverse bias $\Longrightarrow$ small reverse saturation current
 
 $V_T$ = thermal voltage: approx 26mv at room temp
 
@@ -100,6 +100,8 @@ The "storage time", or the delay, is $t_s$: Amount of time the diode conducts re
 The transition time is $t_t$: Time it takes to ramp up/down in voltage after switching
 
 and $t_{rr}=t_s+t_t$
+
+ 
 
 
 

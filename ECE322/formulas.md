@@ -3,6 +3,12 @@
 
 ---
 
+## Diode Constants:
+
+![constant table](images/diode_constants.png)
+
+---
+
 ## Ideal Diode Law:
 
 $I=I_0(e^{\frac{qV}{kT}}-1)$
@@ -26,7 +32,7 @@ The "dark saturation current" ($I_0$) is an extremely important parameter which 
 
 ## Non-Ideal Diodes
 
-For actual diodes, the expression becomes:
+For real-world diodes, the expression becomes:
 
 $I= I_0(e^{\frac{qv}{nkT}}-1)$
 
@@ -52,5 +58,19 @@ $t_{rr}=t_s+t_t$
 
 ---
 
+### Transistor currents
+
+- $I_B$ : Base current
+- $I_C$ : Collector current
+- $I_E$ : Emitter current
+- $\beta$ : Transistor current gain
+
+$I_B = \dfrac{I_C}{\beta}$
+
+$I_C = \beta \cdot I_B$
+
+$I_E = I_C + I_B$
+
+$\beta = \dfrac{I_C}{I_B}$
 
 
