@@ -1,8 +1,11 @@
+### Diode Materials
 - N-material has free electrons
 - P-material has room for them to move to 
 - Where they meet is the depletion zone
 
 ---
+
+#Bias
 
 Biasing $\Longrightarrow$ applying voltage
 
@@ -108,8 +111,8 @@ and $t_{rr}=t_s+t_t$
 
 # Lecture Wednesday
 
-- $V_c$ = Cathode volatge with respect to ground
--$V_A$ = Anode voltage wrt ground
+- $V_c$ = Cathode voltage with respect to ground
+-$V_A$ = Anode voltage with respect to ground
 
 Bias means applying a voltage 
 - Forward, positive voltage applied to anode
@@ -119,8 +122,8 @@ Current is a vector quantity
 
 ### Applications of diodes
 
-- voltage rectification; AC to DC
-- voltage clamping; Limits voltage spikes or ESD pulses
+- Voltage rectification; AC to DC
+- Voltage clamping; Limits voltage spikes or ESD pulses
 - DC restoration; Shifting DC square wave "up" so that minimum voltage is 0v
 
 ---
@@ -130,27 +133,27 @@ Current is a vector quantity
 A diode is on when:
 
 - When a diode is on, $V_{anode} > V_{cathode}$
-- current is flowing in the direction from anode to cathode.
+- Current is flowing in the direction from anode to cathode.
 
 ##### Solving:
 
--make an assumtion and test cases
+- Make an assumption and test cases
 
-- remove diodes. If current cant flow, any resistors will not reduce volatge, so treat the end node where the diode was removed as if there were no resistors between it and the power source.
+- Remove diodes. If current can't flow, any resistors will not reduce voltage, so treat the end node where the diode was removed as if there were no resistors between it and the power source.
 
-- check node volatges, and also determine current direction.
+- Check node voltages, and also determine current direction.
 
-- abandon assumption of a system of diodes if one is a contradiction
+- Abandon assumption of a system of diodes if one is a contradiction
 
-- use kvl to determine voltage at node and current direction
+- use KVL to determine voltage at node and current direction
 
-- use kirchoff current law to determine current flowing in and out of nodes.
+- Use Kirchhoff's current law to determine current flowing in and out of nodes.
 
 ---
 
-# 1/11/25 Viedo Lecture
+# 1/11/25 Video Lecture
 
-output from 2 paralell sources with diodes is the maxima of the two sources
+Output from 2 parallel sources with diodes is the maxima of the two sources
 
 ### Real diodes
 
@@ -174,15 +177,17 @@ $V_BR=$ breakdown voltage. Reverse bias voltage which allows diode to break and 
 ---
 
 ### Diode equation
-$i=I_s\cdot(e^{\frac{v}{\eta\cdot V_{th}}}-1)$
+$i=I_s\cdot(e^{\frac{V}{\eta\cdot V_{th}}}-1)$
 
 - $v=$ voltage across diode
 - $I_S=$ saturation current
 - $\eta=$ constant $\approx 1$ for Si 
 - $V_{th}$ Thermal voltage :
 $v_{th}= \frac{K\cdot T}{q}$
-where: $K=$ Boltzmann constant: $1.38\times 10^{-23}\frac{Joules}{Kelvin}$,
+where: $K=$ Boltzmann constant: $1.38\times 10^{-23}\frac{Joules}{Kelvin}$
+
 $T=$ Room temperature in Kelvin: $K=273+^{\circ}C$,
+
 and $q=$ charge of one electron ($e^-$)$=1.6\times10^{-19}$ coulombs 
 
 For questions in this class: assume $V_{th}=25mV$ unless otherwise stated
@@ -194,7 +199,7 @@ for forward bias, voltage across a diode is much more than zero
 $V >> 0$
 So, the diode equation becomes $i=I_S\cdot(e^{\frac{V}{V_{th}}}-1) \ \because \eta =1$
 Since $V>>0$, $e^{\frac{V}{V_{th}}}>>1$
-$\therefore i=I_S\codt e^{\frac{V}{V_{th}}}$
+$\therefore i=I_S\cdot e^{\frac{V}{V_{th}}}$
 
 ##### Reverse Bias
 
@@ -206,7 +211,7 @@ and $i$ simplifies to $i=-I_S$
 
 #### Summation:
 
-Forward bias: $i=I_S\codt e^{\frac{V}{V_{th}}}$
+Forward bias: $i=I_S\cdot e^{\frac{V}{V_{th}}}$
 Reverse Bias: $i=-I_S$
 
 ---
@@ -230,12 +235,12 @@ V_DD _           V  V_D   V
 
 Use the diode equation:
 
-We know forward bias, $\therfore I_D=I_S\codt e^{\frac{V}{V_{th}}}$  -Eqn.1
+We know forward bias, $\therefore I_D=I_S\cdot e^{\frac{V}{V_{th}}}$  -Eqn.1
 and per Ohm's law: $I_D=\frac{V_{DD}-V_D}{R}$     -Eqn.2
 
 $V_D$ and $I_D$ are uknown, and we have the same number of equations.
 Substitute Eqn.1 for $I_D$ in Eqn.2:
-$I_S\codt e^{\frac{V}{V_{th}}} =\frac{V_{DD}-V_D}{R} $
+$I_S\cdot e^{\frac{V}{V_{th}}} =\frac{V_{DD}-V_D}{R} $
 
 This is a non-linear equation, and is too hard to be solved by hand.
 
@@ -262,7 +267,7 @@ This method is not effective for complex circuits
 2. Solve for $I_D=\frac{V_{DD}-0.7}{R}$
 
 3. For the $I_D$ from step 2, calculate $V_D$ again:
- $\because \ I_D=I_S\codt e^{\frac{V}{V_{th}}}$:
+ $\because \ I_D=I_S\cdot e^{\frac{V}{V_{th}}}$:
  $V_D=V_{th}\cdot(ln \frac{I_D}{I_S})$
 
 4. With new $V_D$, repeat from step 1.
@@ -302,4 +307,125 @@ Does not work with reverse bias
 
 # 1/13/25 Lecture
 
+### Thermal volatge
+
+$V_{th}$ effects the barrier volatge and the volatge drop
+
+Diode as a temperature sensor: barrier voltage drops as temperature increases.
+
+this will also affect the voltage drop.
+
+we will be using the constant voltage drop model in this class.
+
+constant volatge drop can e used to deisgn circuits, but then fine tune in SPICE
+
+---
+
+#### Example 1
+
+```
+3v
+____
+  |
+  |
+  <
+  > 2k ohm
+  >
+  |---------Vo
+  V
+  -
+  |
+  V
+... 5 total diodes
+  |
+  ___gnd
+```
+
+if all diodes are off, there is no voltage drop across resistor
+$\therefore \ V_O = 3v$
+
+if supply is 4v, all diodes are on and $V_O$ is 3.5v
+
+---
+
+## Voltage rectifiers
+
+converting AC to DC
+
+```
+Input voltage -> transfprmer -> voltage rectifier -> filter -> voltage regulator -> device
+
+```
+
+Analog circuits need clean power supply
+
+3 types of volatge recifier
+1. Half wave recifier: affect half of the sine wave "fixes"
+2. Full wave recifier: fixes full sine wave
+3. Bridge rectifier: 
+
+#### half wave
+
+1 diode on secondary side
+
+grounds on transformer can be physiccally seperated
+
+```
+__n__n__n__
+````
+
+all volatage droops across load
+
+New half wave has peak of:
+$8 \cdot \sqrt{2}$
+
+when in the negative part of original sine wave, diode is off and $V_O$ is zero.
+
+PIV: peak inverse voltage:
+Maximum reverse bias voltage that appears across a diode in a circuit.
+
+PIV for half wave rectifier is 
+$8 \cdot \sqrt{2}$
+
+when designing circuit, make sure breakdown voltage is well above PIV
+
+average voltage od a sine wave is zero.
+average of a half wave is non zero, therefore it has some DC content (voltage)
+
+
+using a capacitor across the load creates a filter
+
+during first half of cycle we are charging the capacitor
+
+capaictor release charge during second half which turns diode off
+
+size of capacitor changes ammount of ripple to load
+
+full wave rectification is easier to filter than a half wave
+
+see half wave LTSPICE simulation on canvas
+
+current across capacitor changes instantaneously, but volatge can't. Opposite for inductors
+
+
+---
+
+# Lecture 1/15/25
+
+# Voltage rectification contd
+
+$\tao =rc$
+$\omega_p=\frac{1}{rc}$
+
+### Full wave rectifiers
+
+### Bridge rectifier
+
+Using more diodes to avoid needing a center tap
+
+Ground is a low impedance point
+
+Ground does not have to be the lowest potential in a circuit
+
+$v=\frac{L_{di}}{d_t}$
 
