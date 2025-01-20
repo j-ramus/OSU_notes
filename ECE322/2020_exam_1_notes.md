@@ -1,5 +1,5 @@
 ## Problem 1:
-![prob1](images/2020_ex1_1_1.png)
+![prob1](images/2020_ex_1_1.png)
 Transformer:
 Center-tap halves the voltage.
 
